@@ -12,6 +12,7 @@ import ErrorPage from "./components/error-page/error-page.component";
 import IndexHome from "./components/home/index-home.component";
 import About from "./components/about/about.component";
 import BlogList from "./components/blog/bloglist.component";
+import BlogPost from "./components/blog/blogpost.component";
 
 const router = createBrowserRouter([
   {
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/blog/:id",
-        element: <BlogList />,
+        element: <BlogPost />,
       },
       {
         path: "/about",
