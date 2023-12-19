@@ -11,6 +11,7 @@ import AppRouter from "./routes/app-router/app-router";
 import ErrorPage from "./components/error-page/error-page.component";
 import IndexHome from "./components/home/index-home.component";
 import About from "./components/about/about.component";
+import BlogList from "./components/blog/bloglist.component";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,14 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <IndexHome />,
+      },
+      {
+        path: "/blog",
+        element: <BlogList />,
+      },
+      {
+        path: "/blog/:id",
+        element: <BlogList />,
       },
       {
         path: "/about",
