@@ -7,9 +7,9 @@ import {
   CardActions,
   Button,
   Chip,
-} from '@mui/material';
-import { blogPosts } from '../../utils/posts.utils';
-import { Link } from 'react-router-dom';
+} from "@mui/material";
+import { blogPosts } from "../../utils/posts.utils";
+import { Link } from "react-router-dom";
 
 export default function BlogList() {
   return (
@@ -24,27 +24,33 @@ export default function BlogList() {
           <Card>
             <CardHeader
               title={post.title}
-              subheader={(
+              subheader={
                 <Chip label={post.date} color="primary" size="small" />
-              )}
+              }
             />
             <CardContent>
-              <Typography variant="body2" color="textSecondary" component={Link} to={`/blog/${post.id}`}>
-                {post.content.substring(0, 150) + '...'}
+              <Typography
+                variant="body2"
+                color="textSecondary"
+                component={Link}
+                to={`/blog/${post.id}`}
+              >
+                {post.content.substring(0, 150) + "..."}
               </Typography>
             </CardContent>
             <CardActions disableSpacing>
               <Typography variant="body2" color="textSecondary">
                 By {post.author}
               </Typography>
-              <Button size="small" variant="contained">
-                Read More
-              </Button>
+              <Link to={`/blog/${post.id}`}>
+                <Button size="small" variant="contained">
+                  Read More
+                </Button>
+              </Link>
             </CardActions>
           </Card>
         </Grid>
       ))}
     </Grid>
   );
-};
-
+}
