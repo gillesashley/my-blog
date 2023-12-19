@@ -7,7 +7,6 @@ import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
-import AppRouter from "./routes/app-router/app-router";
 import ErrorPage from "./components/error-page/error-page.component";
 import IndexHome from "./components/home/index-home.component";
 import About from "./components/about/about.component";
@@ -15,11 +14,12 @@ import BlogList from "./components/blog/bloglist.component";
 import BlogPost from "./components/blog/blogpost.component";
 import { CssBaseline } from "@mui/material";
 import { blogPosts } from "./utils/posts.utils";
+import App from "./App";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <AppRouter />,
+    element: <App />,
     errorElement: <ErrorPage />,
 
     children: [
@@ -29,7 +29,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/blog",
-        element: <BlogList blogPosts={blogPosts}/>,
+        element: <BlogList blogPosts={blogPosts} updateBlogPosts={() => {}} />,
       },
       {
         path: "/blog/:id",
@@ -45,7 +45,7 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <CssBaseline/>
+    <CssBaseline />
     <RouterProvider router={router} />
   </React.StrictMode>
 );
