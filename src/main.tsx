@@ -13,6 +13,7 @@ import IndexHome from "./components/home/index-home.component";
 import About from "./components/about/about.component";
 import BlogList from "./components/blog/bloglist.component";
 import BlogPost from "./components/blog/blogpost.component";
+import { CssBaseline } from "@mui/material";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,7 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
+    <CssBaseline/>
     <RouterProvider router={router} />
   </React.StrictMode>
 );

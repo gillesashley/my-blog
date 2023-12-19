@@ -7,7 +7,6 @@ import {
   Button,
   Chip,
 } from "@mui/material";
-import CssBaseline from "@mui/material/CssBaseline";
 import Container from "@mui/material/Container";
 import { blogPosts } from "../../utils/posts.utils";
 import { Link } from "react-router-dom";
@@ -27,7 +26,6 @@ export default function BlogPost() {
 
   return (
     <>
-      <CssBaseline />
       <Container maxWidth="lg">
         <Card>
           <CardHeader
