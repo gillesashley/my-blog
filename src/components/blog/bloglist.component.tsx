@@ -15,7 +15,10 @@ export default function BlogList() {
   return (
     <Grid container spacing={3}>
       <Grid item xs={12}>
-        <Typography variant="h3" sx={{ mb: 3 }}>
+        <Typography
+          variant="h2"
+          sx={{ mb: 3, mt: 3, ml: 3, fontWeight: "bold" }}
+        >
           Blog Posts
         </Typography>
       </Grid>
