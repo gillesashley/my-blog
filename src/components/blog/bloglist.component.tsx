@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Grid,
   Typography,
@@ -10,8 +11,30 @@ import {
 } from "@mui/material";
 import { blogPosts } from "../../utils/posts.utils";
 import { Link } from "react-router-dom";
+import CreatePostModal from "../create-post-modal/create-post-modal.components";
 
-export default function BlogList() {
+interface Post {
+  id: number;
+  title: string;
+  date: string;
+  content: string;
+  author: string;
+}
+
+interface BlogListProps {
+  blogPosts: Post[];
+}
+
+export default function BlogList({ blogPosts }: BlogListProps) {
+  const [isCreatePostModalOpen, setIsCreatePostModalOpen] = useState(false);
+
+  const handleCreatePost = (data: {
+    title: string;
+    content: string;
+  }) => {
+    console.log("new post data", data);
+  };
+
   return (
     <Grid container spacing={3}>
       <Grid item xs={12}>
@@ -21,6 +44,18 @@ export default function BlogList() {
         >
           Blog Posts
         </Typography>
+        <Button
+          variant="contained"
+          sx={{ ml: 3 }}
+          onClick={() => setIsCreatePostModalOpen(true)}
+        >
+          Create Post
+        </Button>
+        <CreatePostModal
+          open={isCreatePostModalOpen}
+          onClose={() => setIsCreatePostModalOpen(false)}
+          onSubmit={handleCreatePost}
+        />
       </Grid>
       {blogPosts.map((post) => (
         <Grid item xs={12} sm={6} md={4} key={post.id}>

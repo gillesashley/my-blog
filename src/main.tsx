@@ -14,6 +14,7 @@ import About from "./components/about/about.component";
 import BlogList from "./components/blog/bloglist.component";
 import BlogPost from "./components/blog/blogpost.component";
 import { CssBaseline } from "@mui/material";
+import { blogPosts } from "./utils/posts.utils";
 
 const router = createBrowserRouter([
   {
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/blog",
-        element: <BlogList />,
+        element: <BlogList blogPosts={blogPosts}/>,
       },
       {
         path: "/blog/:id",
