@@ -7,9 +7,9 @@ import {
   CardActions,
   Button,
   Chip,
-  Link,
 } from '@mui/material';
 import { blogPosts } from '../../utils/posts.utils';
+import { Link } from 'react-router-dom';
 
 export default function BlogList() {
   return (
