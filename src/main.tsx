@@ -7,12 +7,12 @@ import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
-import Root from "./routes/root/root.tsx";
+import AppRouter from "./routes/app-router/app-router";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root />,
+    element: <AppRouter />,
   },
 ]);
 
