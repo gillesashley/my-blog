@@ -8,11 +8,26 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import AppRouter from "./routes/app-router/app-router";
+import ErrorPage from "./components/error-page/error-page.component";
+import IndexHome from "./components/home/index-home.component";
+import About from "./components/about/about.component";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <AppRouter />,
+    errorElement: <ErrorPage />,
+
+    children: [
+      {
+        index: true,
+        element: <IndexHome />,
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+    ],
   },
 ]);
 
