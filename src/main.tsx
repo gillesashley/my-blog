@@ -10,10 +10,9 @@ import "@fontsource/roboto/700.css";
 import ErrorPage from "./components/error-page/error-page.component";
 import IndexHome from "./components/home/index-home.component";
 import About from "./components/about/about.component";
-import BlogList from "./components/blog/bloglist.component";
-import BlogPost from "./components/blog/blogpost.component";
+import BlogList from "./components/blog/blog-list.component";
+import BlogPostDetail from "./components/blog/blog-post-detail.component";
 import { CssBaseline } from "@mui/material";
-import { blogPosts } from "./utils/posts.utils";
 import App from "./App";
 
 const router = createBrowserRouter([
@@ -29,11 +28,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/blog",
-        element: <BlogList blogPosts={blogPosts} updateBlogPosts={() => {}} />,
+        element: <BlogList />,
       },
       {
         path: "/blog/:id",
-        element: <BlogPost />,
+        element: <BlogPostDetail />,
       },
       {
         path: "/about",
